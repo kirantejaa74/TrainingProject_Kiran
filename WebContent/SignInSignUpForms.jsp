@@ -1,103 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-COMPATIBLE" content="IE-edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>SignInSignUpForms</title>
-
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-<link rel="stylesheet" href="css/custom.css">
-</head>
-
-<body>
-	<!--PARENT CONTAINER START-->
-	<div class="container">
-
-		<!--ROW1 STARTS-->
-		<div class="container">
-			<div class="row one">
-				<!--  1ST COL START -->
-				<div class="col-md-6 mt">
-					<h5>Contact Us on +91 40 66217777</h5>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>TA Digital Shopping Portal</title>
+		<!-- BOOTSTRAP CSS -->
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
+		<!-- SITE CSS -->
+		<link rel="stylesheet" href="css/custom.css" type="text/css">
+		<!-- FONT-AWESOME CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div class="container-fluid">
+			<!-- ROW 1 STARTS -->
+			<div class="row black">  
+				<div class="col-md-offset-1 col-md-5">
+					<a class="btn btn-default btn-black">Contact +91 40 6621 7777</a>
 				</div>
-				<!-- 1ST COL END -->
-
-				<!--  2ND COL START -->
-				<div class="col-md-2 mt">
-					<a href="#"><h5>
-							<span class="glyphicon glyphicon-log-in"></span> SIGN IN
-						</h5></a>
+				<% String w = (String)session.getAttribute("log");
+					if(w==null)
+					{
+				%>
+				<div class="col-md-6">
+					<a href="SignInSignUpForms.jsp" class="btn btn-default btn-black"><i class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;SIGN IN</a>
+					<a href="SignInSignUpForms.jsp" class="btn btn-default btn-black"><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;SIGN UP</a>
+					<a href="#" class="btn btn-default btn-black"><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;VENDOR SIGN IN</a>
+					<a href="#" class="btn btn-default btn-black"><i class="fa fa-facebook"></i></a>
+					<a href="#" class="btn btn-default btn-black"><i class="fa fa-twitter"></i></a>
+					<a href="#" class="btn btn-default btn-black"><i class="fa fa-google-plus"></i></a>
+					<a href="#" class="btn btn-default btn-black"><i class="fa fa-envelope"></i></a>
 				</div>
-				<!--  2ND COL END -->
-
-				<!--  3RD COL START -->
-				<div class="col-md-2 mt">
-					<a href="#"><h5>
-							<span class="glyphicon glyphicon-user"></span> SIGN UP
-						</h5></a>
+				<%
+					}
+					else if(w!=null){
+				%>
+				<div class="col-md-4">
+					<a href="#" class="btn btn-default btn-black">Welcome <%= w %></a> 
+					<a href="logout" class="btn btn-default btn-black"><i class="glyphicon glyphicon-log-out"></i></a>
 				</div>
-				<!--  3RD COL END -->
-
-				<!-- 4TH COL START -->
-				<div class="col-md-2 mt">
-					<a href="#" class="btn btn-block btn-facebook"><span
-						class="fa fa-facebook"></span></a> <a href="#"
-						class="btn btn-block btn-google"><span class="fa fa-google"></span></a>
-					<a href="#" class="btn btn-block btn-twitter"><span
-						class="fa fa-twitter"></span></a>
-				</div>
-				<!-- 4TH COL END -->
-
+				<%
+					}
+				%>
 			</div>
+			<!-- ROW 1 ENDS -->
+			
+			<!-- ROW 2 STARTS -->
+				<%@ include file="header.html" %>
+			<!-- ROW 2 ENDS -->
 		</div>
-		<!-- ROW1 ENDS-->
-
-		<!-- ROW2 STARTS-->
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3" id="row2image">
-					<img src="images/logo.png">
-				</div>
-				<div class="col-md-7" id="rol2col2">
-					<ul class="nav navbar-nav">
-						<li class="dropdown"><a class="drop" class="dropdown-toggle"
-							data-toggle="dropdown" href="#">ELECTRONICS <span
-								class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Page 1-1</a></li>
-							</ul></li>
-						<li class="dropdown"><a class="drop" class="dropdown-toggle"
-							data-toggle="dropdown" href="#">MEN <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Page 1-1</a></li>
-							</ul></li>
-						<li class="dropdown"><a class="drop" class="dropdown-toggle"
-							data-toggle="dropdown" href="#">WOMEN <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Page 1-1</a></li>
-							</ul></li>
-						<li class="dropdown"><a class="drop" class="dropdown-toggle"
-							data-toggle="dropdown" href="#">BABY & KIDS <span
-								class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Page 1-1</a></li>
-
-							</ul></li>
-						<li class="dropdown"><a class="drop" class="dropdown-toggle"
-							data-toggle="dropdown" href="#">HOME & FURNITURE <span
-								class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Page 1-1</a></li>
-							</ul></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- ROW2 ENDS -->
 
 		<!-- ROW3 STARTS -->
 		<div class="container">
@@ -230,83 +182,18 @@
 				</div>
 			</div>
 		</div>
-		<!--ROW4 ENDS -->
-
-		<!--ROW5 STARTS-->
-		<div class="container">
-			<div class="row penta">
-				<div class="col-md-1"></div>
-
-				<div class="col-md-3 p2">
-					<h5>ABOUT US</h5>
-					<p>Pellentesque habitant morbi tristique senectus et netus et
-						malesuada fames ac turpis egestas.</p>
-					<hr />
-					<h5>JOIN OUR MONTHLY NEWSLETTER</h5>
-					<form action="#">
-						<input type="text" name="sub" value="" />
-						<button type="submit">
-							<span class="glyphicon glyphicon-send"></span>
-						</button>
-						<br />
-						<br />
-					</form>
-				</div>
-
-				<div class="col-md-2 p2">
-					<h5>BLOG</h5>
-					<img src="images/detailsquare1.jpg" />
-					<h5 class="x">BLOG POST NAME</h5>
-					<br />
-					<br /> <img src="images/detailsquare1.jpg" />
-					<h5 class="x">BLOG POST NAME</h5>
-					<br />
-					<br /> <img src="images/detailsquare1.jpg" />
-					<h5 class="x">VERY VERY LONG BLOG POST NAME</h5>
-					<br />
-					<br />
-				</div>
-
-				<div class="col-md-3 p2">
-					<h5>CONTACT</h5>
-					<p>TECHASPECT SOLUTIONS PRIVATE LTD.</p>
-					<p>PLOT NO 38, N HEIGHTS, 3RD FLOOR, HI-TECH CITY, PHASE 2,
-						MADHAPUR, HYDERABAD, TELENGANA - 500081, INDIA</p>
-					<form action="#">
-						<input type="submit" value="GO TO CONTACT PAGE" name="con"
-							class="cont" />
-					</form>
-				</div>
-
-				<div class="col-md-3 p21">
-					<img src="images/detailsquare1.jpg" class="i1" /> <img
-						src="images/detailsquare1.jpg" class="i2" /> <img
-						src="images/detailsquare1.jpg" class="i2" /><br />
-					<br /> <img src="images/detailsquare1.jpg" class="i1" /> <img
-						src="images/detailsquare1.jpg" class="i2" /> <img
-						src="images/detailsquare1.jpg" class="i2" />
-				</div>
-
-				<div class="col-md-1"></div>
-			</div>
-		</div>
-		<!--ROW5 ENDS -->
-
-		<!--ROW6 STARTS -->
-		<div class="container">
-			<div class="row six">
-				<p>
-					<span class="glyphicon">&#xe194;</span> 2018. TechAspect Solutions
-					Private Ltd.
-				</p>
-			</div>
-		</div>
-		<!--ROW6 ENDS -->
-
-	</div>
-	<!--PARENT CONTAINER END-->
-
-	<script src="js/jquery-3.3.1.js"></script>
-	<script src="bootstrap/js/bootstrap.js"></script>
-</body>
+			<!--ROW4 ENDS -->
+		
+			<!-- FOOTER STARTS -->
+				<%@ include file="footer.html" %>
+			<!-- FOOTER ENDS -->			
+			
+		<!-- SCRIPTS BEGIN -->
+	
+		<script src="js/jquery-3.3.1.js"></script>
+		<script src="bootstrap/js/bootstrap.js"></script>
+	
+		<!-- SCRIPTS END -->
+	
+	</body>
 </html>
